@@ -1,0 +1,19 @@
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  length: 200px; 
+  width: 100px; 
+  border: solid black 1px;
+  list-style: none;
+}
+
+.app {
+  width: 100%; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px; 
+}
