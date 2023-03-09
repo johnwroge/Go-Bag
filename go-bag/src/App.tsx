@@ -2,6 +2,9 @@ import { useState, useEffect, ReactNode } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
+
+// fetch and display with functional components 
+
 function App() {
 
   interface card {
