@@ -15,13 +15,18 @@ function App() {
   useEffect(() => {
     fetch("https://swapi.dev/api/people")
     .then(res => res.json())
-    .then(char => setCharacters(char.results))
+    .then(char => {
+      // console.log(char.results)
+      setCharacters(char.results)
+    })
     .catch(err => console.log(err))
   },[]) 
-
+// console.log(characters)
+//can access array index from second parameter of map function
 const characterList = characters.map((char,index) => (
   <li key = {`char-${index}`} className = "card">
     <p>{char.name} </p>
+    <p> index {index}</p>
     <p> {char.height}</p>
     <p> {char.mass}</p>
   </li>
