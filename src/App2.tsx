@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+class App2 extends Component {
   constructor(props) {
     super(props);
     // initialize the astronauts with an empty array
@@ -48,4 +48,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App2;
