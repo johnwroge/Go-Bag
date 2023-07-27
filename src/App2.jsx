@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App2 extends Component {
@@ -13,6 +12,7 @@ class App2 extends Component {
       api: 'http://api.open-notify.org/astros.json',
     };
   }
+  
 
   // make sure to fetch from this React life cycle
   componentDidMount() {
@@ -38,7 +38,6 @@ class App2 extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <ul>
             {astronautList}
           </ul>

@@ -50,43 +50,79 @@ import './App.css'
 //   )
 // }
 
-function App () {
+// function App () {
 
 
-  interface Char{
+//   interface Char{
+//     name: String,
+//     height: number,
+//     mass: number;
+
+//   }
+//   const [characters, setCharacters]= useState<Char[]>([]);
+
+//   useEffect(() => {
+//     fetch("https://swapi.dev/api/people")
+//     .then(res => res.json())
+//     .then(data => setCharacters(data.results))
+//   },[])
+
+
+//   const cardsToDisplay = characters.map((char, index)=> (
+//     <li key = {`character-${index}`}>
+//       <p>name: {char.name}</p>
+//       <p>height: {char.height}</p>
+//       <p>mass: {char.mass}</p>
+//     </li>
+//   )
+//   )
+// return (
+//   <>
+//     {cardsToDisplay}
+//   </>
+
+// )
+// }
+
+
+'https://swapi.dev/api/people'
+
+function App (){
+
+  interface Character {
     name: String,
-    height: number,
-    mass: number;
-
+    height: Number,
+    mass: Number,
+    eye_color: String,
+    hair_color: String
   }
-  const [characters, setCharacters]= useState<Char[]>([]);
 
-  useEffect(() => {
-    fetch("https://swapi.dev/api/people")
+  const [ characters, setCharacters ] = useState<Character[]>([])
+
+  useEffect(()=>{
+    fetch('https://swapi.dev/api/people')
     .then(res => res.json())
-    .then(data => setCharacters(data.results))
+    .then(res => setCharacters(res.results))
+    .catch(err =>  console.log(err))
   },[])
 
 
-  const cardsToDisplay = characters.map((char, index)=> (
-    <li key = {`character-${index}`}>
-      <p>name: {char.name}</p>
-      <p>height: {char.height}</p>
-      <p>mass: {char.mass}</p>
+  const display = characters.map((char, index )=> (
+    <li key = {`character-${index}`}> 
+      <p>Name: {char.name}</p>
+      <p>Height: {char.height} </p>
+      <p>Mass: {char.mass}</p>
+      <p>Eye Color: {char.eye_color}</p>
+      <p>Hair Color: {char.hair_color}</p>
     </li>
-  )
-  )
-return (
-  <>
-    {cardsToDisplay}
-  </>
+  ))
 
-)
+  return (
+    <> 
+      {display}
+    </>
+  )
+
 }
 
-
-
-
- export default App;
-
-
+export default App; 
