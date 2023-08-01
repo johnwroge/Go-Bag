@@ -39,7 +39,7 @@ class App2 extends Component {
       <div className="App">
         <header className="App-header">
           <ul>
-            {astronautList}
+            {/* {astronautList} */}
           </ul>
         </header>
       </div>
